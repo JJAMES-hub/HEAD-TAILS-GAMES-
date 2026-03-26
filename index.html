@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="
+      gamePlay();
+let results = '';
+let playerChoice = 'heads'
+
+    if (playerChoice === computerChoice) {
+        results = 'you win'
+    }else{
+       results = 'you lose'
+    }
+
+alert(`computer ${computerChoice} you chose ${playerChoice} ${results}`);
+  ">HEADS</button>
+    
+    <button onclick="
+ gamePlay();
+
+ let results = '';
+let playerChoice = 'tails'
+
+    if (playerChoice === computerChoice) {
+        results = 'you win'
+    }else{
+       results = 'you lose'
+    }alert(`computer ${computerChoice} you chose ${playerChoice} ${results}`);
+    ">TAILS</button>
+
+<script>
+    const computerChoice = '';
+function gamePlay() {
+  const randomNumber = Math.random();
+
+ if (randomNumber < 1/2 ){
+    computerChoice = 'heads'
+}else{
+      computerChoice = 'tails';
+}
+}
+</script>
+
+</body>
+</html>
