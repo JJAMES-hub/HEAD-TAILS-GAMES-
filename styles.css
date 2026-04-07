@@ -1,6 +1,39 @@
-:root {
-  --bg: #0f172a;
-  --card: #1e293b;
-  --text: #e2e8f0;
-  --accent: #38bdf8;
+body{
+ background-image: url("components/HeadsorTails.webp");
+ background-size: cover;
+background-position: center;
+ height: 100vh;
+ background-repeat: no-repeat;
+}
+.heading{
+  text-align: center;
+}
+button{ 
+  margin-top: 20px;
+  align-items: center;
+  margin-left: 100px;
+  background-color:rgb(216, 212, 212);
+  font-size: medium;
+  padding: 10px 24px;
+border-radius: 15px;
+border: 2px solid #e7e7e7;
+transition-duration: 1s;
+
+}
+button:hover {
+  background-color: rgb(80, 94, 107);
+}
+.choice{
+  font-style: oblique;
+font-weight: lighter;
+  font-size: large;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.results{
+  margin-top: 90px ;
+  font-size:x-large;
+  font-weight: bolder;
+  font-style: inherit;
+  text-align: center;
 }

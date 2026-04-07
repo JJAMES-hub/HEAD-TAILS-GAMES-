@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heads or Tails</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="core.js"></script>
 </head>
-<body>
 
-<button onclick="gamePlay('heads')">HEADS</button>
-<button onclick="gamePlay('tails')">TAILS</button>
-<button onclick="
+<body>
+<h1 class="heading">HEAD TAILS GAME</h1>
+ <p id="choiceText" class="choice">Make a move</p>
+    <button onclick="gamePlay('heads')">HEADS</button>
+    <button onclick="gamePlay('tails')">TAILS</button>
+    <button onclick="
     score.win= 0;
     score.lose= 0;
 localStorage.removeItem('score')
@@ -18,54 +22,16 @@ location.reload();
      updateScoreElement();
 ">RESET SCORE</button>
 
-<p class="js-score"></p>
-<p class="js-challenge"></p>
-<p class="js-choice"></p>
-<p class="js-result"></p>
-<p>Make a move</p>
-
-<script>
-const score = JSON.parse(localStorage.getItem('score')) || {
-win: 0,
-lose: 0
-};
+ 
+    <div class="results">
+        <p class="js-score"></p>
+        <p class="js-challenge"></p>
+        <p class="js-choice"></p>
+        <p class="js-result"></p>
+    </div>
 
 
-function gamePlay(playerChoice) {
-    let computerChoice = '';
-    let randomNumber = Math.random();
-
-    if (randomNumber < 1/2) {
-        computerChoice = 'heads';
-    } else {
-        computerChoice = 'tails';
-    }
-
-    let results = '';
-
-    if (playerChoice === computerChoice) {
-        results = 'you win';
-    } else {
-        results = 'you lose';
-    }
-    if(results==='you win'){
-        score.win +=1
-    }else{
-        score.lose+=1
-    }
-    localStorage.setItem('score', JSON.stringify(score))
-updateScoreElement();
-document.querySelector('.js-result').innerHTML = 'Make a move';
-document.querySelector('.js-result').innerHTML = ` ${results}`
-document.querySelector('.js-challenge').innerHTML = `computer:${computerChoice}`
-document.querySelector('.js-choice').innerHTML = `You:${playerChoice}`
-
-}
-function updateScoreElement() {
-    document.querySelector('.js-score')
-.innerHTML =` wins=${score.win} lose=${score.lose}`;
-}
-</script>
-
+        
 </body>
+
 </html>
